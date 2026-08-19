@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Website NAME</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: azure;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: darkblue;
+        }
+
+        nav {
+            background: royalblue;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        ul {
+            background-color: white;
+            padding: 15px;
+            width: 200px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        #home {
+            display: block;
+        }
+    </style>
+
+    <script>
+        function showPage(pageName) {
+            document.getElementById("home").style.display = "none";
+            document.getElementById("customers").style.display = "none";
+            document.getElementById("contact").style.display = "none";
+
+            document.getElementById(pageName).style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Customer Relationship</h1>
+
+    <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('customers')">Customers</a>
+        <a onclick="showPage('contact')">Contact</a>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page">
+        <h2>Welcome to CRM Website</h2>
+        <p>This is our home page.</p>
+    </div>
+
+    <!-- Customers Page -->
+    <div id="customers" class="page">
+        <h2>Customer List</h2>
+
+        <ul>
+            <li>John</li>
+            <li>Mary</li>
+            <li>David</li>
+        </ul>
+
+        <a onclick="showPage('home')">Back to Home</a>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <h2>Contact Us</h2>
+
+        <p>Email: crm@gmail.com</p>
+        <p>Phone: 98XXXXXX07</p>
+
+        <a onclick="showPage('home')">Back to Home</a>
+    </div>
+
+</body>
+</html>
